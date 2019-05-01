@@ -39,39 +39,39 @@ class AppServiceProvider extends ServiceProvider
                 [
                     'text' => 'Ordenes Woocommerce',
                     'route' => 'woocommerce.orders',
-                    'icon' => ''
+                    'icon' => 'file-text'
                 ],
                 [
                     'text' => 'Ordenes Mercado Libre',
                     'url' => '#',
-                    'icon' => ''
+                    'icon' => 'file-o'
                 ],
                 'MENSAJERIA',
                 [
                     'text' => 'Preguntas Mercado Libre',
                     'url' => '#',
-                    'icon' => ''
+                    'icon' => 'comment'
                 ],
                 [
                     'text' => 'Preguntas Tawk',
                     'url' => '#',
-                    'icon' => ''
+                    'icon' => 'comments'
                 ],
                 'CONFIGURACION',
                 [
                     'text' => 'Configuración Woocommerce',
                     'route' => 'config_woommerces.index',
-                    'icon' => ''
+                    'icon' => 'cogs'
                 ],
                 [
                     'text' => 'Configuración Mercado Libre',
                     'url' => '#',
-                    'icon' => ''
+                    'icon' => 'cog'
                 ],
                 [
                     'text' => 'Configuración Tawk.io',
                     'url' => '#',
-                    'icon' => ''
+                    'icon' => 'wrench'
                 ]
             );
         });
