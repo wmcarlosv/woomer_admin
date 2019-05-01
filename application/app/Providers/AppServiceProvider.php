@@ -68,7 +68,7 @@ class AppServiceProvider extends ServiceProvider
                     'submenu' => [
                         [
                             'text' => 'Woomerce',
-                            'url' => '#',
+                            'route' => 'config_woommerces.index',
                             'icon' => ''
                         ],
                         [
