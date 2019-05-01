@@ -35,53 +35,43 @@ class AppServiceProvider extends ServiceProvider
                     'route' => 'home',
                     'icon' => 'dashboard'
                 ],
+                'ORDENES',
                 [
-                    'text' => 'Woocommerce',
-                    'url' => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'Ordenes',
-                            'route' => 'woocommerce.orders',
-                            'icon' => ''
-                        ]
-                    ]
+                    'text' => 'Ordenes Woocommerce',
+                    'route' => 'woocommerce.orders',
+                    'icon' => ''
                 ],
                 [
-                    'text' => 'Mercado Libre',
+                    'text' => 'Ordenes Mercado Libre',
                     'url' => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'Ordenes',
-                            'url' => '#',
-                            'icon' => ''
-                        ],
-                        [
-                            'text' => 'Preguntas y Respuestas',
-                            'url' => '#',
-                            'icon' => ''
-                        ]
-                    ]
+                    'icon' => ''
+                ],
+                'MENSAJERIA',
+                [
+                    'text' => 'Preguntas Mercado Libre',
+                    'url' => '#',
+                    'icon' => ''
                 ],
                 [
-                    'text' => 'Configuración',
+                    'text' => 'Preguntas Tawk',
                     'url' => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'Woomerce',
-                            'route' => 'config_woommerces.index',
-                            'icon' => ''
-                        ],
-                        [
-                            'text' => 'Mercado Libre',
-                            'url' => '#',
-                            'icon' => ''
-                        ],
-                        [
-                            'text' => 'Tawk.to',
-                            'url' => '#',
-                            'icon' => ''
-                        ]
-                    ]
+                    'icon' => ''
+                ],
+                'CONFIGURACION',
+                [
+                    'text' => 'Configuración Woocommerce',
+                    'route' => 'config_woommerces.index',
+                    'icon' => ''
+                ],
+                [
+                    'text' => 'Configuración Mercado Libre',
+                    'url' => '#',
+                    'icon' => ''
+                ],
+                [
+                    'text' => 'Configuración Tawk.io',
+                    'url' => '#',
+                    'icon' => ''
                 ]
             );
         });
