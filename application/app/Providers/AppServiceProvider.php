@@ -56,7 +56,7 @@ class AppServiceProvider extends ServiceProvider
                             'icon' => ''
                         ],
                         [
-                            'text' => 'Preguntas',
+                            'text' => 'Preguntas y Respuestas',
                             'url' => '#',
                             'icon' => ''
                         ]
