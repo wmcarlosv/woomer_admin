@@ -34,6 +34,54 @@ class AppServiceProvider extends ServiceProvider
                     'text' => 'Dashboard',
                     'route' => 'home',
                     'icon' => 'dashboard'
+                ],
+                [
+                    'text' => 'Woocommerce',
+                    'url' => '#',
+                    'submenu' => [
+                        [
+                            'text' => 'Ordenes',
+                            'url' => '#',
+                            'icon' => ''
+                        ]
+                    ]
+                ],
+                [
+                    'text' => 'Mercado Libre',
+                    'url' => '#',
+                    'submenu' => [
+                        [
+                            'text' => 'Ordenes',
+                            'url' => '#',
+                            'icon' => ''
+                        ],
+                        [
+                            'text' => 'Preguntas',
+                            'url' => '#',
+                            'icon' => ''
+                        ]
+                    ]
+                ],
+                [
+                    'text' => 'Configuración',
+                    'url' => '#',
+                    'submenu' => [
+                        [
+                            'text' => 'Woomerce',
+                            'url' => '#',
+                            'icon' => ''
+                        ],
+                        [
+                            'text' => 'Mercado Libre',
+                            'url' => '#',
+                            'icon' => ''
+                        ],
+                        [
+                            'text' => 'Tawk.to',
+                            'url' => '#',
+                            'icon' => ''
+                        ]
+                    ]
                 ]
             );
         });
