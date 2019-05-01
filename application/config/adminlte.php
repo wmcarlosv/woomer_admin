@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => 'WooMer Admin',
+    'title' => 'WooMer',
 
     'title_prefix' => '',
 
@@ -30,9 +30,9 @@ return [
     |
     */
 
-    'logo' => '<b>Woo</b>Mer Admin',
+    'logo' => '<b>WooMer</b>',
 
-    'logo_mini' => '<b>W</b>MA',
+    'logo_mini' => '<b>W</b>M',
 
     /*
     |--------------------------------------------------------------------------
