@@ -41,7 +41,7 @@ class AppServiceProvider extends ServiceProvider
                     'submenu' => [
                         [
                             'text' => 'Ordenes',
-                            'url' => '#',
+                            'route' => 'woocommerce.orders',
                             'icon' => ''
                         ]
                     ]
