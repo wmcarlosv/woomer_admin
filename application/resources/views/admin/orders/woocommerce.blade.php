@@ -49,14 +49,16 @@
 
                 var orders = JSON.parse(response);
                 var html = "";
-                
+
                 $.each(orders, function(index, obj){
-                    html = "<tr>";
+
+                    html += "<tr>";
                         html+="<td><img class='img-thumbnail' style='width:100px !important; height:100px !important;' src='"+obj.image+"' /></td>";
                         html+="<td>"+obj.description+"</td>";
                         html+="<td>"+obj.client+"</td>";
                         html+="<td><a href='#' class='btn btn-info'>Ver Detalles</a></td>";
                     html+="</tr>";
+
                 });
 
                 $("#load-woocommerce-orders").empty();
