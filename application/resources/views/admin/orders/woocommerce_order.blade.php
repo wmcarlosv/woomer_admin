@@ -18,9 +18,8 @@
             <table class="table table-bordered table-striped">
                 <thead>
                     <th>Foto</th>
-                    <th>SKU</th>
                     <th>Description</th>
-                    <th>Coste</th>
+                    <th>Costo</th>
                     <th>Catidad</th>
                     <th>Total</th>
                 </thead>
@@ -29,10 +28,7 @@
                         <img src="{{ $product->image }}" class="img-thumbnail" style="width: 100px !important; height: 100px !important;">
                     </td>
                     <td>
-                        {{ $product->sku }}
-                    </td>
-                    <td>
-                        {{ $product->description }}
+                        <a href="{{ $product->permalink }}" target="_blank">{{ $product->description }}</a>
                     </td>
                     <td>
                         {{ $product->price }}
@@ -80,13 +76,34 @@
                 <div class="col-md-4">
                     <h3>Facturaci&oacute;n</h3>
                     <hr />
-                    
+                    <ul class="list-group">
+                        <li class="list-group-item">{{ $order->billing->first_name.' '.$order->billing->last_name }}</li>
+                        <li class="list-group-item">{{ $order->billing->address_1 }}</li>
+                        <li class="list-group-item">{{ $order->billing->city }}</li>
+                        <li class="list-group-item">{{ $order->billing->state }}</li>
+                        <li class="list-group-item">{{ $order->billing->postcode }}</li>
+                    </ul>
+                    <b>Correo Electronico:</b>
+                    <br />
+                    {{ $order->billing->email }}
+                    <br />
+                    <br />
+                    <b>Telefono:</b>
+                    <br />
+                    {{ $order->billing->phone }}
+
                 </div>
 
                 <div class="col-md-4">
                     <h3>Envio</h3>
                     <hr />
-                    
+                    <ul class="list-group">
+                        <li class="list-group-item">{{ $order->shipping->first_name.' '.$order->shipping->last_name }}</li>
+                        <li class="list-group-item">{{ $order->shipping->address_1 }}</li>
+                        <li class="list-group-item">{{ $order->shipping->city }}</li>
+                        <li class="list-group-item">{{ $order->shipping->state }}</li>
+                        <li class="list-group-item">{{ $order->shipping->postcode }}</li>
+                    </ul>
                 </div>
             </div>
 

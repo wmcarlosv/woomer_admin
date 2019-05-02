@@ -67,10 +67,10 @@ class WoocommercesController extends Controller
 		$product = array(
 			'image' => $pdt->images[0]->src,
 			'description' => $order->line_items[0]->name,
-			'sku' => $order->line_items[0]->sku,
 			'price' => $order->line_items[0]->price,
 			'qty' => $order->line_items[0]->quantity,
-			'total' => $order->line_items[0]->total
+			'total' => $order->line_items[0]->total,
+			'permalink' => $pdt->permalink
 		);
 
 		return view('admin.orders.woocommerce_order',['order' => $order, 'product' => (object)$product]);
