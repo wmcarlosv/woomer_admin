@@ -16,7 +16,9 @@
                     @endforeach
                 </select>
             </div>
-            
+            <!--<button class="btn btn-success" type="button" id="load-orders"><i class="fa fa-download"></i> Cargar Ordenes</button>
+            <br />
+            <br />-->
             <table class="table table-bordered table-striped">
                 <thead>
                     <th>Foto</th>
@@ -36,6 +38,8 @@
 @section('js')
 <script type="text/javascript">
     $(document).ready(function(){
+
+        //$("#load-orders").click(function(){
 
             var shop = $("#shop-woocommerce").val();
             var url = 'load_orders/'+shop
@@ -61,6 +65,8 @@
                 $("#load-woocommerce-orders").append(html);
 
             });
+
+       // });
 
     });
 </script>
