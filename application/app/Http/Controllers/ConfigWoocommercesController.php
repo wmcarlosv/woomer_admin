@@ -44,7 +44,7 @@ class ConfigWoocommercesController extends Controller
             'client_secret' => 'required'
         ]);
 
-        $cw = new ConfigWoommerce();
+        $cw = new ConfigWoocommerce();
         $cw->url = $request->input('url');
         $cw->client_key = $request->input('client_key');
         $cw->client_secret = $request->input('client_secret');
@@ -94,7 +94,7 @@ class ConfigWoocommercesController extends Controller
             'client_secret' => 'required'
         ]);
 
-        $cw = ConfigWoommerce::findorfail($id);
+        $cw = ConfigWoocommerce::findorfail($id);
         $cw->url = $request->input('url');
         $cw->client_key = $request->input('client_key');
         $cw->client_secret = $request->input('client_secret');
@@ -114,7 +114,7 @@ class ConfigWoocommercesController extends Controller
      */
     public function destroy($id)
     {
-        $cw = ConfigWoommerce::findorfail($id);
+        $cw = ConfigWoocommerce::findorfail($id);
         $cw->delete();
 
         flash('Registro Eliminado con Exito!!')->success();
