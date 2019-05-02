@@ -22,4 +22,5 @@ Route::group(['prefix' => 'admin'], function(){
 	Route::resource('config_woocommerces','ConfigWoocommercesController');
 	Route::get('/wocommerce/orders','WoocommercesController@orders')->name('woocommerce.orders');
 	Route::get('/wocommerce/load_orders/{id}','WoocommercesController@load_orders')->name('woocommerce.load.orders');
+	Route::get('/wocommerce/order/{id}','WoocommercesController@order')->name('woocommerce.order');
 });

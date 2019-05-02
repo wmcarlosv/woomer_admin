@@ -16,9 +16,7 @@
                     @endforeach
                 </select>
             </div>
-            <button class="btn btn-success" type="button" id="load-orders"><i class="fa fa-download"></i> Cargar Ordenes</button>
-            <br />
-            <br />
+            
             <table class="table table-bordered table-striped">
                 <thead>
                     <th>Foto</th>
@@ -39,8 +37,6 @@
 <script type="text/javascript">
     $(document).ready(function(){
 
-        $("#load-orders").click(function(){
-
             var shop = $("#shop-woocommerce").val();
             var url = 'load_orders/'+shop
             $("#load-woocommerce-orders").html("<tr><td colspan='4'><center>Cargando...</center><td></tr>");
@@ -51,12 +47,12 @@
                 var html = "";
 
                 $.each(orders, function(index, obj){
-
+                    var url_order = '{{ url("admin/wocommerce/order/") }}/'+obj.id;
                     html += "<tr>";
                         html+="<td><img class='img-thumbnail' style='width:100px !important; height:100px !important;' src='"+obj.image+"' /></td>";
                         html+="<td>"+obj.description+"</td>";
                         html+="<td>"+obj.client+"</td>";
-                        html+="<td><a href='#' class='btn btn-info'>Ver Detalles</a></td>";
+                        html+="<td><a href='"+url_order+"' class='btn btn-info'><i class='fa fa-eye'></i> Ver Detalles</a></td>";
                     html+="</tr>";
 
                 });
@@ -65,8 +61,6 @@
                 $("#load-woocommerce-orders").append(html);
 
             });
-
-        });
 
     });
 </script>

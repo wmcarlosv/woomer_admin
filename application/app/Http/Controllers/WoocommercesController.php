@@ -37,7 +37,7 @@ class WoocommercesController extends Controller
     		$p_id = $wo->line_items[0]->product_id;
     		$product = $woocommerce->get('products/'.$p_id);
     		//end productimage
-
+    		$orders[$cont]['id'] =  $wo->id;
     		$orders[$cont]['image'] = $product->images[0]->src;
     		$orders[$cont]['description'] = $wo->line_items[0]->name." ".$wo->line_items[0]->price." X ".$wo->line_items[0]->quantity;
     		$orders[$cont]['client'] = $wo->billing->first_name." ".$wo->billing->last_name;
@@ -46,4 +46,8 @@ class WoocommercesController extends Controller
 
     	print json_encode($orders);
     }
+
+    public function order($id = NULL){
+
+    } 
 }
