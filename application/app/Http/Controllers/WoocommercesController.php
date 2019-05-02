@@ -47,7 +47,32 @@ class WoocommercesController extends Controller
     	print json_encode($orders);
     }
 
-    public function order($id = NULL){
+    public function order($id = NULL, $shop = NULL){
 
+    	$cw = ConfigWoocommerce::findorfail($shop);
+
+    	$woocommerce = new Client(
+		    $cw->url,
+		    $cw->client_key,
+		    $cw->client_secret,
+		    [
+		        'wp_api' => true,
+		        'version' => $cw->version
+		    ]
+		);
+
+		$order = $woocommerce->get('orders/'.$id);
+		$p_id = $order->line_items[0]->product_id;
+		$pdt = $woocommerce->get('products/'.$p_id);
+		$product = array(
+			'image' => $pdt->images[0]->src,
+			'description' => $order->line_items[0]->name,
+			'sku' => $order->line_items[0]->sku,
+			'price' => $order->line_items[0]->price,
+			'qty' => $order->line_items[0]->quantity,
+			'total' => $order->line_items[0]->total
+		);
+
+		return view('admin.orders.woocommerce_order',['order' => $order, 'product' => (object)$product]);
     } 
 }

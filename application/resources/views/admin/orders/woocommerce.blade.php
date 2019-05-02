@@ -51,7 +51,7 @@
                 var html = "";
 
                 $.each(orders, function(index, obj){
-                    var url_order = '{{ url("admin/wocommerce/order/") }}/'+obj.id;
+                    var url_order = '{{ url("admin/wocommerce/order/") }}/'+obj.id+"/"+shop;
                     html += "<tr>";
                         html+="<td><img class='img-thumbnail' style='width:100px !important; height:100px !important;' src='"+obj.image+"' /></td>";
                         html+="<td>"+obj.description+"</td>";
