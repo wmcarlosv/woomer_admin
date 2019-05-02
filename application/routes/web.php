@@ -19,6 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'admin'], function(){
-	Route::resource('config_woommerces','ConfigWoocommercesController');
+	Route::resource('config_woocommerces','ConfigWoocommercesController');
 	Route::get('/wocommerce/orders','WoocommercesController@orders')->name('woocommerce.orders');
 });

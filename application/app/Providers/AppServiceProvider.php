@@ -60,7 +60,7 @@ class AppServiceProvider extends ServiceProvider
                 'CONFIGURACION',
                 [
                     'text' => 'Configuración Woocommerce',
-                    'route' => 'config_woommerces.index',
+                    'route' => 'config_woocommerces.index',
                     'icon' => 'cogs'
                 ],
                 [

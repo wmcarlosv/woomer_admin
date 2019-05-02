@@ -14,7 +14,9 @@ class ConfigWoocommercesController extends Controller
      */
     public function index()
     {
-        //
+        $cws = ConfigWoommerce::all();
+
+        return view('admin.config_woocommerces.home',['cws' => $cws]);
     }
 
     /**
@@ -24,7 +26,7 @@ class ConfigWoocommercesController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.config_woocommerces.new');
     }
 
     /**
@@ -35,7 +37,23 @@ class ConfigWoocommercesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            
+        $request->validate([
+            'url' => 'required',
+            'client_key' => 'required',
+            'client_secret' => 'required'
+        ]);
+
+        $cw = new ConfigWoommerce();
+        $cw->url = $request->input('url');
+        $cw->client_key = $request->input('client_key');
+        $cw->client_secret = $request->input('client_secret');
+        $cw->version = $request->input('version');
+        $cw->save();
+
+        flash('Registro Insertado con Exito!!')->success();
+
+        return redirect()->route('config_woocommerces.index');
     }
 
     /**
@@ -46,7 +64,7 @@ class ConfigWoocommercesController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -57,7 +75,8 @@ class ConfigWoocommercesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cw = ConfigWoommerce::findorfail($id);
+        return view('admin.config_woocommerces.edit',['cw'=>$cw]);
     }
 
     /**
@@ -69,7 +88,22 @@ class ConfigWoocommercesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'url' => 'required',
+            'client_key' => 'required',
+            'client_secret' => 'required'
+        ]);
+
+        $cw = ConfigWoommerce::findorfail($id);
+        $cw->url = $request->input('url');
+        $cw->client_key = $request->input('client_key');
+        $cw->client_secret = $request->input('client_secret');
+        $cw->version = $request->input('version');
+        $cw->update();
+
+        flash('Registro Actualizado con Exito!!')->success();
+
+        return redirect()->route('config_woocommerces.index');
     }
 
     /**
@@ -80,6 +114,11 @@ class ConfigWoocommercesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $cw = ConfigWoommerce::findorfail($id);
+        $cw->delete();
+
+        flash('Registro Eliminado con Exito!!')->success();
+
+        return redirect()->route('config_woocommerces.index');
     }
 }
