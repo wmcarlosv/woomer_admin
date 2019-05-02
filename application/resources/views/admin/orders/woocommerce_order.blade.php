@@ -28,7 +28,7 @@
                         <img src="{{ $product->image }}" class="img-thumbnail" style="width: 100px !important; height: 100px !important;">
                     </td>
                     <td>
-                        <a href="https://bipcommerce.co/wp-admin/post.php?post={{ $order->number }}&action=edit" target="_blank">{{ $product->description }}</a>
+                        <a href="https://bipcommerce.co/wp-admin/post.php?post={{ $product->product_id }}&action=edit" target="_blank">{{ $product->description }}</a>
                     </td>
                     <td>
                         {{ $product->price }}

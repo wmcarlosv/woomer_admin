@@ -70,7 +70,8 @@ class WoocommercesController extends Controller
 			'price' => $order->line_items[0]->price,
 			'qty' => $order->line_items[0]->quantity,
 			'total' => $order->line_items[0]->total,
-			'permalink' => $pdt->permalink
+			'permalink' => $pdt->permalink,
+			'product_id' => $p_id
 		);
 
 		return view('admin.orders.woocommerce_order',['order' => $order, 'product' => (object)$product]);
