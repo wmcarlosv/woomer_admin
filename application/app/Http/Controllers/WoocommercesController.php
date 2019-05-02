@@ -74,6 +74,6 @@ class WoocommercesController extends Controller
 			'product_id' => $p_id
 		);
 
-		return view('admin.orders.woocommerce_order',['order' => $order, 'product' => (object)$product]);
+		return view('admin.orders.woocommerce_order',['order' => $order, 'product' => (object)$product, 'cw' => $cw]);
     } 
 }
