@@ -21,4 +21,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'admin'], function(){
 	Route::resource('config_woocommerces','ConfigWoocommercesController');
 	Route::get('/wocommerce/orders','WoocommercesController@orders')->name('woocommerce.orders');
+	Route::get('/wocommerce/load_orders/{id}','WoocommercesController@load_orders')->name('woocommerce.load.orders');
 });

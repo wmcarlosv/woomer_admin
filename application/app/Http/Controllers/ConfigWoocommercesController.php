@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\ConfigWoommerce;
+use App\ConfigWoocommerce;
 
 class ConfigWoocommercesController extends Controller
 {
@@ -14,7 +14,7 @@ class ConfigWoocommercesController extends Controller
      */
     public function index()
     {
-        $cws = ConfigWoommerce::all();
+        $cws = ConfigWoocommerce::all();
 
         return view('admin.config_woocommerces.home',['cws' => $cws]);
     }
