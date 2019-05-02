@@ -12,6 +12,9 @@
     		<h2>Articulo</h2>
     	</div>
     	<div class="panel-body">
+            <a class="btn btn-info" href="{{ route('woocommerce.orders') }}">Volver</a>
+            <br />
+            <br />
             <table class="table table-bordered table-striped">
                 <thead>
                     <th>Foto</th>
@@ -86,6 +89,7 @@
                     
                 </div>
             </div>
+
         </div>
     </div>
 @stop
