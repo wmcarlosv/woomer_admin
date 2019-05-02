@@ -82,16 +82,9 @@
                         <li class="list-group-item">{{ $order->billing->city }}</li>
                         <li class="list-group-item">{{ $order->billing->state }}</li>
                         <li class="list-group-item">{{ $order->billing->postcode }}</li>
+                        <li class="list-group-item"><b>Correo Electronico:</b> {{ $order->billing->email }}</li>
+                        <li class="list-group-item"><b>Telefono:</b> {{ $order->billing->phone }}</li>
                     </ul>
-                    <b>Correo Electronico:</b>
-                    <br />
-                    {{ $order->billing->email }}
-                    <br />
-                    <br />
-                    <b>Telefono:</b>
-                    <br />
-                    {{ $order->billing->phone }}
-
                 </div>
 
                 <div class="col-md-4">
